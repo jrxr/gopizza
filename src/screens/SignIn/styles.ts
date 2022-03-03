@@ -1,6 +1,6 @@
-import styled, { css } from "styled-components/native";
 import { LinearGradient } from "expo-linear-gradient";
 import { getBottomSpace } from "react-native-iphone-x-helper";
+import styled, { css } from "styled-components/native";
 
 export const Container = styled(LinearGradient).attrs(({ theme }) => ({
   colors: theme.COLORS.GRADIENT,
@@ -25,7 +25,6 @@ export const Title = styled.Text`
   font-size: 32px;
   margin-bottom: 24px;
   align-self: flex-start;
-
   ${({ theme }) => css`
     font-family: ${theme.FONTS.TITLE};
     color: ${theme.COLORS.TITLE};
@@ -40,16 +39,15 @@ export const Brand = styled.Image.attrs({
   margin-bottom: 32px;
 `;
 
-export const ForgotPassword = styled.TouchableOpacity`
+export const ForgotPasswordButton = styled.TouchableOpacity`
   align-self: flex-end;
   margin-bottom: 20px;
 `;
 
 export const ForgotPasswordLabel = styled.Text`
   font-size: 14px;
-
   ${({ theme }) => css`
     font-family: ${theme.FONTS.TEXT};
     color: ${theme.COLORS.TITLE};
-  `};
+  `}
 `;
