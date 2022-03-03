@@ -12,11 +12,22 @@ import {
 } from "./styles";
 
 import brandImg from '@assets/brand.png';
+import { useAuth } from "@hooks/auth";
 import { useState } from "react";
 
 export function SignIn() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+
+  const { signIn, isLogging, forgotPassword } = useAuth();
+
+  function handleSignIn() {
+    signIn(email, password);
+  }
+
+  function handleForgotPassword() {
+    forgotPassword(email);
+  }
 
   return (
     <Container>
@@ -43,7 +54,7 @@ export function SignIn() {
             value={password}
           />
 
-          <ForgotPasswordButton onPress={() => {}}>
+          <ForgotPasswordButton onPress={handleForgotPassword}>
             <ForgotPasswordLabel>
               Esqueci minha senha
             </ForgotPasswordLabel>
@@ -52,8 +63,8 @@ export function SignIn() {
           <Button
             title="Entrar"
             type="secondary"
-            onPress={() => {}}
-            isLoading={false}
+            onPress={handleSignIn}
+            isLoading={isLogging}
           />
         </Content>
       </KeyboardAvoidingView>
