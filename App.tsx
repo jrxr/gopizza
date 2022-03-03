@@ -9,7 +9,7 @@ import { ThemeProvider } from 'styled-components/native';
 import { AuthProvider } from './src/hooks/auth';
 
 import theme from './src/theme';
-import { SignIn } from './src/screens/SignIn';
+// import { SignIn } from './src/screens/SignIn';
 import { Product } from './src/screens/Product';
 
 export default function App() {
